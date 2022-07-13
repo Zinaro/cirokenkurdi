@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "397282647855",
+    "project_id": "ciroken-kurdi",
+    "storage_bucket": "ciroken-kurdi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397282647855:android:aa1e780503cdfa766e4bda",
+        "android_client_info": {
+          "package_name": "com.cirokenkurdi.cirokenkurdi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397282647855-p0k1n3hnfoeb6jsm8c6uoonmb2a4bdqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cirokenkurdi.cirokenkurdi",
+            "certificate_hash": "de0b828dfb2f0fe040bc57ca95016e5ec68017d1"
+          }
+        },
+        {
+          "client_id": "397282647855-l182sjegbk05clv8hufsfrdla5me85cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoE0zJSdoLrn6WuMM8GNf1tYwVpRCw4Do"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397282647855-l182sjegbk05clv8hufsfrdla5me85cr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
