@@ -74,7 +74,7 @@ class _CirokeVekeState extends State<CirokeVeke> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Colors.cyan, Colors.white],
+          colors: [Colors.yellow, Colors.green],
         ),
       ),
       child: Scaffold(
@@ -145,12 +145,7 @@ class _CirokeVekeState extends State<CirokeVeke> {
               borderRadius: BorderRadius.circular(30),
               child: Padding(
                 padding: const EdgeInsets.only(top: 5, bottom: 5),
-                child: Image.network(
-                  "https://www.dlf.pt/dfpng/maxpng/363-3635426_yellow-ball-png.png",
-                  width: double.infinity,
-                  height: 320,
-                  fit: BoxFit.cover,
-                ),
+                child: Text(""),
               ),
             ),
             const SizedBox(

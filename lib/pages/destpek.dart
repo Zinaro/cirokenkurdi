@@ -134,9 +134,7 @@ class _DestpekState extends State<Destpek> {
                 },
                 physics: FixedExtentScrollPhysics(),
                 itemExtent: 350,
-                perspective: 0.004,
-                offAxisFraction: -0.6,
-                useMagnifier: true,
+                perspective: 0.002,
                 children: [
                   AzadMizgin(),
                   AzadMizgin(),
