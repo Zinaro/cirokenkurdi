@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'pages/destpek.dart';
-import 'package:cirokenkurdi/widgets/netcontrol.dart';
+import 'rupel/destpek.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color.fromARGB(255, 0, 246, 21),
       ),
-      home: Destpek(),
+      home: const Destpek(),
       debugShowCheckedModeBanner: false,
     );
   }

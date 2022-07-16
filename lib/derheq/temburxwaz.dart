@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Mizgin extends StatefulWidget {
-  const Mizgin({Key? key}) : super(key: key);
+class Temburxwaz extends StatefulWidget {
+  const Temburxwaz({Key? key}) : super(key: key);
 
   @override
-  State<Mizgin> createState() => _MizginState();
+  State<Temburxwaz> createState() => _TemburxwazState();
 }
 
-class _MizginState extends State<Mizgin> {
+class _TemburxwazState extends State<Temburxwaz> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +20,7 @@ class _MizginState extends State<Mizgin> {
             gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Colors.red, Colors.white]),
+                colors: [Colors.yellow, Colors.white]),
             borderRadius: BorderRadius.circular(40),
             boxShadow: const [
               BoxShadow(
@@ -46,7 +46,7 @@ class _MizginState extends State<Mizgin> {
                     margin: const EdgeInsets.only(top: 5, left: 20, right: 20),
                     child: const Center(
                         child: Text(
-                      "Dengbêj",
+                      "Sponsor",
                       style: TextStyle(fontSize: 16),
                     )),
                   ),
@@ -70,7 +70,7 @@ class _MizginState extends State<Mizgin> {
                               width: 130,
                               height: 130,
                               decoration: const BoxDecoration(
-                                color: Colors.greenAccent,
+                                color: Colors.redAccent,
                                 shape: BoxShape.circle,
                               ),
                               child: Stack(
@@ -85,7 +85,7 @@ class _MizginState extends State<Mizgin> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
-                                        'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
+                                        'https://pbs.twimg.com/profile_images/1211028738915344384/jN2B4-nh_400x400.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -110,7 +110,7 @@ class _MizginState extends State<Mizgin> {
                               child: Padding(
                                 padding: EdgeInsets.all(4),
                                 child: Text(
-                                  'Mizgînxêr',
+                                  'Tembûrxwaz',
                                   style: TextStyle(
                                     color: Color(0xFF14181B),
                                     fontSize: 28,
@@ -132,7 +132,7 @@ class _MizginState extends State<Mizgin> {
                                 child: Padding(
                                   padding: EdgeInsets.all(4),
                                   child: Text(
-                                    "   Şekirekî pir hêja ye. Wê û hingiv dane ber hev hingiv gotiyê ê gel sen qoniş û hişmîş bûye. Niha li Mêrdîn'ê dijî.",
+                                    "   Sponsorê vê sepanê ye. Nêzîkî bi 0.02 BTC bû sponsor. Lûna û BTC distîne û difroşe. Niha nizanim li ku dijî.",
                                     style: TextStyle(
                                       color: Colors.black54,
                                       fontSize: 14,
@@ -157,65 +157,6 @@ class _MizginState extends State<Mizgin> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      width: 140,
-                      height: 35,
-                      constraints:
-                          const BoxConstraints(maxHeight: 50, maxWidth: 140),
-                      decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Colors.pink, Colors.white],
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 4,
-                              color: Colors.black,
-                              offset: Offset(0, 2),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: InkWell(
-                          onTap: () async {
-                            const urltwitter = "https://instagram.com/gerduni_";
-                            if (await canLaunchUrlString(urltwitter)) {
-                              await launchUrlString(
-                                urltwitter,
-                                mode: LaunchMode.externalApplication,
-                              );
-                            }
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Row(
-                              children: const [
-                                Icon(
-                                  FontAwesomeIcons.instagram,
-                                  color: Colors.blue,
-                                  size: 24,
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4),
-                                    child: Text(
-                                      "@gerduni_",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
                       margin: const EdgeInsets.only(right: 10),
                       width: 140,
                       height: 35,
@@ -238,8 +179,7 @@ class _MizginState extends State<Mizgin> {
                         padding: const EdgeInsets.all(4),
                         child: InkWell(
                           onTap: () async {
-                            const urltwitter =
-                                "https://twitter.com/qidumsikesti";
+                            const urltwitter = "https://twitter.com/temburxwaz";
                             if (await canLaunchUrlString(urltwitter)) {
                               await launchUrlString(
                                 urltwitter,
@@ -260,7 +200,7 @@ class _MizginState extends State<Mizgin> {
                                   child: Padding(
                                     padding: EdgeInsets.all(4),
                                     child: Text(
-                                      "@qidumsikesti",
+                                      "@temburxwaz",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 13,

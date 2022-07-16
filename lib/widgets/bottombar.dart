@@ -1,9 +1,9 @@
-import 'package:cirokenkurdi/pages/derheq.dart';
-import 'package:cirokenkurdi/pages/destpek.dart';
-import 'package:cirokenkurdi/pages/favoriyenmin.dart';
+import 'package:cirokenkurdi/rupel/derheq.dart';
+import 'package:cirokenkurdi/rupel/destpek.dart';
+
+import 'package:cirokenkurdi/rupel/stran.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 // ignore: non_constant_identifier_names
@@ -11,8 +11,8 @@ Widget BottomBar(BuildContext context) {
   ControllerenGisti controllerenme = Get.find<ControllerenGisti>();
   return Obx(() => ConvexAppBar(
         style: TabStyle.flip,
-        items: [
-          TabItem(icon: Icons.favorite, title: 'Favorîyên Min'),
+        items: const [
+          TabItem(icon: Icons.music_note_rounded, title: 'Stran'),
           TabItem(icon: Icons.home, title: 'Destpêk'),
           TabItem(icon: Icons.developer_mode, title: 'Derheq'),
         ],
@@ -24,7 +24,7 @@ Widget BottomBar(BuildContext context) {
               controllerenme.kijanmenu.value = i,
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => FavoriyenMin()),
+                  MaterialPageRoute(builder: (context) => const Stran()),
                   (route) => false)
             }
           else if (i == 1)
@@ -32,7 +32,7 @@ Widget BottomBar(BuildContext context) {
               controllerenme.kijanmenu.value = i,
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => Destpek()),
+                  MaterialPageRoute(builder: (context) => const Destpek()),
                   (route) => false)
             }
           else if (i == 2)
@@ -40,7 +40,7 @@ Widget BottomBar(BuildContext context) {
               controllerenme.kijanmenu.value = i,
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => Derheq()),
+                  MaterialPageRoute(builder: (context) => const Derheq()),
                   (route) => false)
             }
         },

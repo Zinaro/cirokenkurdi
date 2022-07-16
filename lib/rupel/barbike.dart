@@ -1,9 +1,7 @@
-import 'dart:io';
 import 'package:cirokenkurdi/widgets/buttonwidget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class BarBike extends StatefulWidget {
   const BarBike({Key? key}) : super(key: key);
@@ -21,7 +19,7 @@ class _BarBikeState extends State<BarBike> {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: Container(
-        padding: EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
         color: Colors.black12,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,14 +29,14 @@ class _BarBikeState extends State<BarBike> {
               text: "Dosyayê Hilbijêre",
               onClicked: dosyaHilbijere,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               "naveDosya",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 48,
             ),
             ButtonWidget(

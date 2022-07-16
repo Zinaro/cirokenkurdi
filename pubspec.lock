@@ -248,7 +248,7 @@ packages:
     source: hosted
     version: "4.6.5"
   http:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: http
       url: "https://pub.dartlang.org"
@@ -447,7 +447,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.4"
+    version: "6.1.5"
   url_launcher_android:
     dependency: transitive
     description:

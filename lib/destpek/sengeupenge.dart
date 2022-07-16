@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AzaduFasuli extends StatefulWidget {
-  const AzaduFasuli({Key? key}) : super(key: key);
+class SengeuPenge extends StatefulWidget {
+  const SengeuPenge({Key? key}) : super(key: key);
 
   @override
-  State<AzaduFasuli> createState() => _AzaduFasuliState();
+  State<SengeuPenge> createState() => _SengeuPengeState();
 }
 
-class _AzaduFasuliState extends State<AzaduFasuli> {
+class _SengeuPengeState extends State<SengeuPenge> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +33,7 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                 topRight: Radius.circular(30),
               ),
               child: Image.network(
-                'https://www.antraktsinema.com/images/pimages/201004/vizyon1_1270467038.jpg',
+                'https://s1.mzstatic.com/us/r30/Purple/v4/c8/37/c4/c837c484-daee-de41-354c-cc97e07f2e2f/YKcMXZ78bh4EAfRXkecKpw-temp-upload.kmbkjeoo.png',
                 width: double.infinity,
                 height: 250,
                 fit: BoxFit.cover,
@@ -61,7 +61,7 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                                 Padding(
                                   padding: EdgeInsets.only(top: 5),
                                   child: Text(
-                                    "Azad û Fasûliya Bi Sihir",
+                                    "Şengê û Pengê",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 16,
@@ -74,7 +74,7 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                                     padding: EdgeInsets.only(
                                         top: 5, left: 10, right: 5, bottom: 5),
                                     child: Text(
-                                      "Qala çîroka azad dike.",
+                                      "Qala bizin û karikên wê dike",
                                       style: TextStyle(
                                         color: Colors.black54,
                                         fontSize: 14,
