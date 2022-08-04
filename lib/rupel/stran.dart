@@ -1,5 +1,12 @@
-import 'package:cirokenkurdi/stran/dipirsin.dart';
+import 'package:cirokenkurdi/stran/barane.dart';
+import 'package:cirokenkurdi/stran/berxemin.dart';
+import 'package:cirokenkurdi/stran/dikodiko.dart';
 import 'package:cirokenkurdi/stran/gundeme.dart';
+import 'package:cirokenkurdi/stran/keleso.dart';
+import 'package:cirokenkurdi/stran/kivroske.dart';
+import 'package:cirokenkurdi/stran/leylo.dart';
+import 'package:cirokenkurdi/stran/lyly.dart';
+import 'package:cirokenkurdi/stran/yekyeke.dart';
 import 'package:cirokenkurdi/widgets/bottombar.dart';
 import "package:flutter/material.dart";
 
@@ -17,6 +24,7 @@ class _StranState extends State<Stran> {
         child: Scaffold(
       bottomNavigationBar: BottomBar(context),
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: const Center(child: Text("Stranên Zarokan")),
         centerTitle: true,
       ),
@@ -25,15 +33,20 @@ class _StranState extends State<Stran> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.yellow, Colors.cyan],
+            colors: [Colors.indigo, Colors.white],
           ),
         ),
         // ignore: prefer_const_literals_to_create_immutables
-        child: ListView(padding: const EdgeInsets.all(5), children: [
-          const GundeMe(),
-          const Dipirsin(),
-          const GundeMe(),
-          const Dipirsin(),
+        child: ListView(padding: const EdgeInsets.all(5), children: const [
+          DikoDiko(),
+          GundeMe(),
+          Kivroske(),
+          YekYeke(),
+          Leylo(),
+          Barane(),
+          Keleso(),
+          LyLy(),
+          BerxeMin(),
         ]),
       ),
     ));

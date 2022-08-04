@@ -1,6 +1,5 @@
 import 'package:cirokenkurdi/rupel/derheq.dart';
 import 'package:cirokenkurdi/rupel/destpek.dart';
-
 import 'package:cirokenkurdi/rupel/stran.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ import 'package:get/get.dart';
 Widget BottomBar(BuildContext context) {
   ControllerenGisti controllerenme = Get.find<ControllerenGisti>();
   return Obx(() => ConvexAppBar(
+        backgroundColor: Colors.green,
         style: TabStyle.flip,
         items: const [
           TabItem(icon: Icons.music_note_rounded, title: 'Stran'),

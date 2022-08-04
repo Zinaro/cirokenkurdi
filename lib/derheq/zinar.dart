@@ -1,4 +1,6 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -10,6 +12,31 @@ class Zinar extends StatefulWidget {
 }
 
 class _ZinarState extends State<Zinar> {
+  bool weneheye = false;
+  String urlwene =
+      "https://pbs.twimg.com/profile_images/1542080501523046400/7E2nVfmd_400x400.jpg";
+  @override
+  void initState() {
+    super.initState();
+    linkUrl();
+    weneheye = true;
+  }
+
+  // ignore: body_might_complete_normally_nullable
+  Future<String?> linkUrl() async {
+    try {
+      final storageRef = await FirebaseStorage.instance
+          .ref("derheq/wene/zinar.jpg")
+          .getDownloadURL();
+
+      setState(() {
+        urlwene = storageRef;
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -84,10 +111,14 @@ class _ZinarState extends State<Zinar> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.network(
-                                        'https://pbs.twimg.com/profile_images/1542080501523046400/7E2nVfmd_400x400.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
+                                      child: weneheye
+                                          ? Image.network(urlwene,
+                                              fit: BoxFit.cover, errorBuilder:
+                                                  (context, error, stackTrace) {
+                                              return Image.asset(
+                                                  "assets/firat.jpg");
+                                            })
+                                          : Image.asset("assets/firat.jpg"),
                                     ),
                                   ),
                                 ],
@@ -110,7 +141,7 @@ class _ZinarState extends State<Zinar> {
                               child: Padding(
                                 padding: EdgeInsets.all(4),
                                 child: Text(
-                                  'Islam Zinar',
+                                  'Îslam Zinar',
                                   style: TextStyle(
                                     color: Color(0xFF14181B),
                                     fontSize: 28,
@@ -153,126 +184,197 @@ class _ZinarState extends State<Zinar> {
             Expanded(
               child: Container(
                 margin: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                child: Column(
                   children: [
-                    Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      width: 140,
-                      height: 35,
-                      constraints:
-                          const BoxConstraints(maxHeight: 50, maxWidth: 140),
-                      decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Colors.pink, Colors.white],
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 4,
-                              color: Colors.black,
-                              offset: Offset(0, 2),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: InkWell(
-                          onTap: () async {
-                            const urlinsta = "https://instagram.com/zinarpy";
-                            if (await canLaunchUrlString(urlinsta)) {
-                              await launchUrlString(
-                                urlinsta,
-                                mode: LaunchMode.externalApplication,
-                              );
-                            }
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Row(
-                              children: const [
-                                Icon(
-                                  FontAwesomeIcons.instagram,
-                                  color: Colors.blue,
-                                  size: 24,
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4),
-                                    child: Text(
-                                      "@zinarpy",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          width: 140,
+                          height: 35,
+                          constraints: const BoxConstraints(
+                              maxHeight: 50, maxWidth: 140),
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [Colors.pink, Colors.white],
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4,
+                                  color: Colors.black,
+                                  offset: Offset(0, 2),
                                 )
                               ],
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: InkWell(
+                              onTap: () async {
+                                const urlinsta =
+                                    "https://instagram.com/zinarpy";
+                                if (await canLaunchUrlString(urlinsta)) {
+                                  await launchUrlString(
+                                    urlinsta,
+                                    mode: LaunchMode.externalApplication,
+                                  );
+                                }
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Row(
+                                  children: const [
+                                    Icon(
+                                      FontAwesomeIcons.instagram,
+                                      color: Colors.blue,
+                                      size: 24,
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.all(4),
+                                        child: Text(
+                                          "@zinarpy",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 10),
-                      width: 140,
-                      height: 35,
-                      constraints: const BoxConstraints(maxHeight: 50),
-                      decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Colors.white, Colors.blue],
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 4,
-                              color: Colors.black,
-                              offset: Offset(0, 2),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: InkWell(
-                          onTap: () async {
-                            const urltwitter = "https://twitter.com/zinarpy";
-                            if (await canLaunchUrlString(urltwitter)) {
-                              await launchUrlString(
-                                urltwitter,
-                                mode: LaunchMode.externalApplication,
-                              );
-                            }
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Row(
-                              children: const [
-                                Icon(
-                                  FontAwesomeIcons.twitter,
-                                  color: Colors.blue,
-                                  size: 24,
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4),
-                                    child: Text(
-                                      "@zinarpy",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
+                        Container(
+                          margin: const EdgeInsets.only(right: 10),
+                          width: 140,
+                          height: 35,
+                          constraints: const BoxConstraints(maxHeight: 50),
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [Colors.white, Colors.blue],
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4,
+                                  color: Colors.black,
+                                  offset: Offset(0, 2),
                                 )
                               ],
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: InkWell(
+                              onTap: () async {
+                                const urltwitter =
+                                    "https://twitter.com/zinarpy";
+                                if (await canLaunchUrlString(urltwitter)) {
+                                  await launchUrlString(
+                                    urltwitter,
+                                    mode: LaunchMode.externalApplication,
+                                  );
+                                }
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Row(
+                                  children: const [
+                                    Icon(
+                                      FontAwesomeIcons.twitter,
+                                      color: Colors.blue,
+                                      size: 24,
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.all(4),
+                                        child: Text(
+                                          "@zinarpy",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 10),
+                          width: 200,
+                          height: 35,
+                          constraints: const BoxConstraints(maxHeight: 50),
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [Colors.white, Colors.yellow],
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4,
+                                  color: Colors.black,
+                                  offset: Offset(0, 2),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: InkWell(
+                              onTap: () {
+                                Clipboard.setData(const ClipboardData(
+                                    text: "islamzinar@gmail.com"));
+                                snackbarNisanBide(context);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Row(
+                                  children: const [
+                                    Icon(
+                                      FontAwesomeIcons.envelope,
+                                      color: Colors.blue,
+                                      size: 24,
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.all(4),
+                                        child: Text(
+                                          "islamzinar@gmail.com",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -281,5 +383,22 @@ class _ZinarState extends State<Zinar> {
         ),
       ),
     );
+  }
+
+  void snackbarNisanBide(BuildContext context) {
+    const snackBar = SnackBar(
+      content: Text(
+        "E-Peyam hat kopîkirin.",
+        style: TextStyle(fontSize: 24, color: Colors.black),
+        textAlign: TextAlign.center,
+      ),
+      backgroundColor: Colors.green,
+      duration: Duration(seconds: 3),
+      shape: StadiumBorder(),
+      margin: EdgeInsets.symmetric(vertical: 32, horizontal: 32),
+      behavior: SnackBarBehavior.floating,
+      elevation: 0,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

@@ -1,9 +1,9 @@
+import 'package:cirokenkurdi/derheq/agahdari.dart';
 import 'package:cirokenkurdi/derheq/mizgin.dart';
 import 'package:cirokenkurdi/derheq/temburxwaz.dart';
 import 'package:cirokenkurdi/derheq/zinar.dart';
 import 'package:cirokenkurdi/widgets/bottombar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Derheq extends StatelessWidget {
   const Derheq({Key? key}) : super(key: key);
@@ -16,20 +16,9 @@ class Derheq extends StatelessWidget {
       child: Scaffold(
         bottomNavigationBar: BottomBar(context),
         appBar: AppBar(
+          backgroundColor: Colors.red,
           title: const Center(child: Text("Derheq")),
           centerTitle: true,
-          actions: [
-            Container(
-                margin: const EdgeInsets.only(right: 15, bottom: 5),
-                child: IconButton(
-                    iconSize: 40,
-                    color: Colors.black,
-                    onPressed: () {},
-                    icon: const Icon(
-                      FontAwesomeIcons.medal,
-                      color: Colors.white,
-                    )))
-          ],
         ),
         body: Container(
           decoration: const BoxDecoration(
@@ -40,10 +29,11 @@ class Derheq extends StatelessWidget {
             ),
           ),
           // ignore: prefer_const_literals_to_create_immutables
-          child: ListView(padding: const EdgeInsets.all(5), children: [
-            const Zinar(),
-            const Mizgin(),
-            const Temburxwaz(),
+          child: ListView(padding: const EdgeInsets.all(5), children: const [
+            Agahdari(),
+            Zinar(),
+            Mizgin(),
+            Temburxwaz(),
           ]),
         ),
       ),

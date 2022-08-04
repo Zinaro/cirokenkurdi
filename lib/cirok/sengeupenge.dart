@@ -13,7 +13,7 @@ class SengeuPengeCirok extends StatefulWidget {
 class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
-  bool isRepeat = true;
+  bool isRepeat = false;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   late Duration? maxDuration;
@@ -23,16 +23,20 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
     super.initState();
     audioPlayer.onPlayerComplete.listen((event) {
       isPlaying = false;
+      isRepeat = false;
     });
+
     audioPlayer.onPlayerStateChanged.listen(
       (state) {
         setState(
           () {
             isPlaying = (state == PlayerState.playing);
+            isRepeat = (state == ReleaseMode.loop);
           },
         );
       },
     );
+
     audioPlayer.onDurationChanged.listen(
       (newDuration) {
         setState(
@@ -42,6 +46,7 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
         );
       },
     );
+
     audioPlayer.onPositionChanged.listen(
       (newPosition) {
         setState(
@@ -62,9 +67,12 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
   Future<AudioPlayer?> setAudio() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("ciroks/deng/sengeupenge.aac")
+          .ref("stran/deng/ZarokTV-Keleso.opus")
           .getDownloadURL();
-      audioPlayer.setReleaseMode(ReleaseMode.release);
+      // isRepeat
+      //     ? audioPlayer.setReleaseMode(ReleaseMode.loop)
+      //     : audioPlayer.setReleaseMode(ReleaseMode.stop);
+
       final url = storageRef;
       await audioPlayer.setSourceUrl(url);
       maxDuration = await audioPlayer.getDuration();
@@ -246,8 +254,11 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
                               iconSize: 50,
                               onPressed: () async {
                                 if (isRepeat) {
-                                  snapshot.data!
+                                  await snapshot.data!
                                       .setReleaseMode(ReleaseMode.loop);
+                                } else {
+                                  await snapshot.data!
+                                      .setReleaseMode(ReleaseMode.stop);
                                 }
                               },
                             ),

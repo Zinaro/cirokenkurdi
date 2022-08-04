@@ -33,11 +33,18 @@ class _SengeuPengeState extends State<SengeuPenge> {
                 topRight: Radius.circular(30),
               ),
               child: Image.network(
-                'https://s1.mzstatic.com/us/r30/Purple/v4/c8/37/c4/c837c484-daee-de41-354c-cc97e07f2e2f/YKcMXZ78bh4EAfRXkecKpw-temp-upload.kmbkjeoo.png',
-                width: double.infinity,
-                height: 250,
-                fit: BoxFit.cover,
-              ),
+                  'https://s1.mzstatic.com/us/r30/Purple/v4/c8/37/c4/c837c484-daee-de41-354c-cc97e07f2e2f/YKcMXZ78bh4EAfRXkecKpw-temp-upload.kmbkjeoo.png',
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                return Image.asset(
+                  "assets/gulistanufirat.jpg",
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                );
+              }),
             ),
             Expanded(
               child: Column(
@@ -128,9 +135,15 @@ class _SengeuPengeState extends State<SengeuPenge> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
-                                              fit: BoxFit.cover,
-                                            ),
+                                                'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
+                                                fit: BoxFit.cover, errorBuilder:
+                                                    (context, error,
+                                                        stackTrace) {
+                                              return Image.asset(
+                                                "assets/gulistan.jpg",
+                                                fit: BoxFit.cover,
+                                              );
+                                            }),
                                           ),
                                         ),
                                       ],

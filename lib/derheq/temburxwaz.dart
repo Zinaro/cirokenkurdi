@@ -1,3 +1,4 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -10,6 +11,31 @@ class Temburxwaz extends StatefulWidget {
 }
 
 class _TemburxwazState extends State<Temburxwaz> {
+  bool weneheye = false;
+  String urlwene =
+      "https://pbs.twimg.com/profile_images/1211028738915344384/jN2B4-nh_400x400.jpg";
+  @override
+  void initState() {
+    super.initState();
+    linkUrl();
+    weneheye = true;
+  }
+
+  // ignore: body_might_complete_normally_nullable
+  Future<String?> linkUrl() async {
+    try {
+      final storageRef = await FirebaseStorage.instance
+          .ref("derheq/wene/temburxwaz.jpg")
+          .getDownloadURL();
+
+      setState(() {
+        urlwene = storageRef;
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -84,10 +110,14 @@ class _TemburxwazState extends State<Temburxwaz> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.network(
-                                        'https://pbs.twimg.com/profile_images/1211028738915344384/jN2B4-nh_400x400.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
+                                      child: weneheye
+                                          ? Image.network(urlwene,
+                                              fit: BoxFit.cover, errorBuilder:
+                                                  (context, error, stackTrace) {
+                                              return Image.asset(
+                                                  "assets/firat.jpg");
+                                            })
+                                          : Image.asset("assets/firat.jpg"),
                                     ),
                                   ),
                                 ],

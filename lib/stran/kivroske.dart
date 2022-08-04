@@ -2,14 +2,14 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-class Dipirsin extends StatefulWidget {
-  const Dipirsin({Key? key}) : super(key: key);
+class Kivroske extends StatefulWidget {
+  const Kivroske({Key? key}) : super(key: key);
 
   @override
-  State<Dipirsin> createState() => _DipirsinState();
+  State<Kivroske> createState() => _KivroskeState();
 }
 
-class _DipirsinState extends State<Dipirsin> {
+class _KivroskeState extends State<Kivroske> {
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
   bool isRepeat = true;
@@ -61,7 +61,7 @@ class _DipirsinState extends State<Dipirsin> {
   Future<AudioPlayer?> setAudio() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("stran/deng/CiwanHaco-Dipirsin.opus")
+          .ref("stran/deng/ZarokTV-Kivroske.opus")
           .getDownloadURL();
       audioPlayer.setReleaseMode(ReleaseMode.release);
       final url = storageRef;
@@ -86,12 +86,7 @@ class _DipirsinState extends State<Dipirsin> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Colors.red,
-            Colors.yellow,
-            Colors.cyan,
-            Colors.white,
-          ],
+          colors: [Colors.cyanAccent, Colors.yellowAccent],
         ),
         boxShadow: [
           BoxShadow(
@@ -118,7 +113,7 @@ class _DipirsinState extends State<Dipirsin> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.network(
-                              'https://i1.sndcdn.com/artworks-000251857989-vd9nxz-t500x500.jpg',
+                              'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/stran%2Fwene%2Fzaroktv-kivroske.jpg?alt=media&token=0c427994-62b5-4835-997f-eebd152c815f',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -162,7 +157,7 @@ class _DipirsinState extends State<Dipirsin> {
                             Row(
                               children: const [
                                 Text(
-                                  "Ciwan Haco",
+                                  "Zarok TV",
                                   style: TextStyle(fontSize: 25),
                                 )
                               ],
@@ -171,7 +166,7 @@ class _DipirsinState extends State<Dipirsin> {
                             Row(
                               children: const [
                                 Text(
-                                  "Dipirsin",
+                                  "Kîvroşkê",
                                   style: TextStyle(fontSize: 18),
                                 )
                               ],

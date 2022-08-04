@@ -30,7 +30,6 @@ dependencies:
   flutter:
     sdk: flutter
   share: ^2.0.4
-  
   firebase_core: ^1.19.1
   cloud_firestore: ^3.2.1
   firebase_storage: ^10.3.1
@@ -73,6 +72,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/firat.jpg
+    - assets/gulistan.jpg
+    - assets/gulistanufirat.jpg
     - assets/sengeupenge.jpg
   
     

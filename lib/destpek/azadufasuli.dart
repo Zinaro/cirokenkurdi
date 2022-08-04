@@ -33,11 +33,18 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                 topRight: Radius.circular(30),
               ),
               child: Image.network(
-                'https://www.antraktsinema.com/images/pimages/201004/vizyon1_1270467038.jpg',
-                width: double.infinity,
-                height: 250,
-                fit: BoxFit.cover,
-              ),
+                  'https://www.antraktsinema.com/images/pimages/201004/vizyon1_1270467038.jpg',
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                return Image.asset(
+                  "assets/gulistanufirat.jpg",
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                );
+              }),
             ),
             Expanded(
               child: Column(
@@ -128,9 +135,15 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
-                                              fit: BoxFit.cover,
-                                            ),
+                                                'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
+                                                fit: BoxFit.cover, errorBuilder:
+                                                    (context, error,
+                                                        stackTrace) {
+                                              return Image.asset(
+                                                "assets/gulistan.jpg",
+                                                fit: BoxFit.cover,
+                                              );
+                                            }),
                                           ),
                                         ),
                                       ],

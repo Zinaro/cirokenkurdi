@@ -2,14 +2,14 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-class GundeMe extends StatefulWidget {
-  const GundeMe({Key? key}) : super(key: key);
+class LyLy extends StatefulWidget {
+  const LyLy({Key? key}) : super(key: key);
 
   @override
-  State<GundeMe> createState() => _GundeMeState();
+  State<LyLy> createState() => _LyLyState();
 }
 
-class _GundeMeState extends State<GundeMe> {
+class _LyLyState extends State<LyLy> {
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
   bool isRepeat = true;
@@ -61,7 +61,7 @@ class _GundeMeState extends State<GundeMe> {
   Future<AudioPlayer?> setAudio() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("stran/deng/DengeZarokanGundeMe.opus")
+          .ref("stran/deng/Ruken-LyLy.opus")
           .getDownloadURL();
       audioPlayer.setReleaseMode(ReleaseMode.release);
       final url = storageRef;
@@ -113,7 +113,7 @@ class _GundeMeState extends State<GundeMe> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.network(
-                              'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/stran%2Fwene%2FDengeZarokan-GundeMe.jpg?alt=media&token=c05c57f4-6cce-404d-ae32-8410fb9525cc',
+                              'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/stran%2Fwene%2Fruken-lyly.jpg?alt=media&token=d475bfcc-c88a-49ec-b0d2-8dede5da1a30',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -157,7 +157,7 @@ class _GundeMeState extends State<GundeMe> {
                             Row(
                               children: const [
                                 Text(
-                                  "Denge Zarokan",
+                                  "Rûken",
                                   style: TextStyle(fontSize: 25),
                                 )
                               ],
@@ -166,7 +166,7 @@ class _GundeMeState extends State<GundeMe> {
                             Row(
                               children: const [
                                 Text(
-                                  "Gundê Me",
+                                  "Ly Ly",
                                   style: TextStyle(fontSize: 18),
                                 )
                               ],
