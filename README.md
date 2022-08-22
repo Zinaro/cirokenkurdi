@@ -4,13 +4,7 @@ Sepana Çîrokên Kurdî ye.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- [Wêne](https://lh3.googleusercontent.com/u0GGcP5M8aUSfhg3nTZBF1mnJ5j78crTDuFlcp0rpxfLNmpho-zLBqAluIk4-Szy6bs)
+- [Wêne](https://lh3.googleusercontent.com/ygUYZ1RCtCttcW6lFVABWiggzlCwRvuCZlk38Ermu0hiSMpGRKAFEVBCu8rviXtUHZ0)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Di sepanê de çîrokên Kurdî tên guhdarkirin.
