@@ -11,6 +11,12 @@ class SengeuPengeCirok extends StatefulWidget {
 }
 
 class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
+  @override
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
+  }
+
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
 
@@ -56,12 +62,6 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
     );
   }
 
-  @override
-  void dispose() {
-    audioPlayer.dispose();
-    super.dispose();
-  }
-
   Future<AudioPlayer?> setAudio() async {
     try {
       final storageRef = await FirebaseStorage.instance
@@ -100,9 +100,6 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
     return SafeArea(
       child: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/sengeupenge.jpg"),
-              alignment: Alignment.topCenter),
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

@@ -1,15 +1,6 @@
-import 'package:cirokenkurdi/stran/barane.dart';
-import 'package:cirokenkurdi/stran/berxemin.dart';
-import 'package:cirokenkurdi/stran/dikodiko.dart';
-import 'package:cirokenkurdi/stran/gundeme.dart';
-import 'package:cirokenkurdi/stran/keleso.dart';
-import 'package:cirokenkurdi/stran/kivroske.dart';
-import 'package:cirokenkurdi/stran/leylo.dart';
-import 'package:cirokenkurdi/stran/lyly.dart';
-import 'package:cirokenkurdi/stran/yekyeke.dart';
+import 'package:cirokenkurdi/stran/biborin.dart';
 import 'package:cirokenkurdi/widgets/bottombar.dart';
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
 
 class Stran extends StatefulWidget {
   const Stran({Key? key}) : super(key: key);
@@ -21,15 +12,15 @@ class Stran extends StatefulWidget {
 class _StranState extends State<Stran> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 125, 252, 252),
       bottomNavigationBar: BottomBar(context),
       appBar: AppBar(
-        backgroundColor: Colors.red.shade900,
+        backgroundColor: Colors.white70,
         title: const Center(
             child: Text(
           "Stranên Zarokan",
-          style: TextStyle(fontWeight: FontWeight.w900),
+          style: TextStyle(fontWeight: FontWeight.w900, color: Colors.black),
         )),
         centerTitle: true,
         elevation: 20.0,
@@ -41,36 +32,33 @@ class _StranState extends State<Stran> {
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //     image: AssetImage(paszemin), alignment: Alignment.topCenter),
-          gradient: LinearGradient(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: const NetworkImage(
+                'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Farka.jpeg?alt=media&token=c72e89c2-b1be-4d26-a5f1-df86fe256dce'),
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.1), BlendMode.dstATop),
+            fit: BoxFit.cover,
+            onError: (dynamic exception, StackTrace? stackTrace) {
+              const AssetImage("assets/error.png");
+            },
+          ),
+          gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.white,
-              Colors.white,
-              Color.fromARGB(255, 255, 230, 0),
-              Color.fromARGB(255, 255, 230, 0),
-              Color.fromARGB(255, 255, 230, 0),
-              Colors.white,
-              Colors.white
+              Color.fromARGB(255, 125, 252, 252),
+              Color.fromARGB(255, 125, 253, 253),
             ],
           ),
         ),
         child: ListView(padding: const EdgeInsets.all(5), children: const [
-          Barane(), Barane(), Barane(), Barane(), Barane(), Barane(), Barane(),
-          Barane(), Barane(),
-          // DikoDiko(),
-          // GundeMe(),
-          // Kivroske(),
-          // YekYeke(),
-          // Leylo(),
-          // Keleso(),
-          // LyLy(),
-          // BerxeMin(),
+          SizedBox(
+            height: 32,
+          ),
+          Biborin(),
         ]),
       ),
-    ));
+    );
   }
 }

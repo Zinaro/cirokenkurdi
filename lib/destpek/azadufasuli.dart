@@ -33,7 +33,7 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                 topRight: Radius.circular(30),
               ),
               child: Image.network(
-                  'https://www.antraktsinema.com/images/pimages/201004/vizyon1_1270467038.jpg',
+                  'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=6a5c437d-8880-48a1-aa9a-ac5b9ff4c21d',
                   width: double.infinity,
                   height: 250,
                   fit: BoxFit.cover,
@@ -135,7 +135,7 @@ class _AzaduFasuliState extends State<AzaduFasuli> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                                'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
+                                                'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=6a5c437d-8880-48a1-aa9a-ac5b9ff4c21d',
                                                 fit: BoxFit.cover, errorBuilder:
                                                     (context, error,
                                                         stackTrace) {

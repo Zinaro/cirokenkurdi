@@ -33,7 +33,7 @@ class _SengeuPengeState extends State<SengeuPenge> {
                 topRight: Radius.circular(30),
               ),
               child: Image.network(
-                  'https://s1.mzstatic.com/us/r30/Purple/v4/c8/37/c4/c837c484-daee-de41-354c-cc97e07f2e2f/YKcMXZ78bh4EAfRXkecKpw-temp-upload.kmbkjeoo.png',
+                  'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=6a5c437d-8880-48a1-aa9a-ac5b9ff4c21d',
                   width: double.infinity,
                   height: 250,
                   fit: BoxFit.cover,
@@ -135,7 +135,7 @@ class _SengeuPengeState extends State<SengeuPenge> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                                'https://pbs.twimg.com/profile_images/1528809432351748096/Pxct5EPD_400x400.jpg',
+                                                'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=6a5c437d-8880-48a1-aa9a-ac5b9ff4c21d',
                                                 fit: BoxFit.cover, errorBuilder:
                                                     (context, error,
                                                         stackTrace) {

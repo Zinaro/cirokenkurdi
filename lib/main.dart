@@ -1,29 +1,14 @@
 import 'package:cirokenkurdi/rupel/destpek.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: kIsWeb
-        ? const FirebaseOptions(
-            apiKey: 'AIzaSyAoE0zJSdoLrn6WuMM8GNf1tYwVpRCw4Do',
-            projectId: 'ciroken-kurdi',
-            messagingSenderId: '397282647855',
-            appId: '1:397282647855:android:aa1e780503cdfa766e4bda',
-          )
-        : const FirebaseOptions(
-            apiKey: 'AIzaSyAoE0zJSdoLrn6WuMM8GNf1tYwVpRCw4Do',
-            projectId: 'ciroken-kurdi',
-            messagingSenderId: '397282647855',
-            appId: '1:397282647855:android:aa1e780503cdfa766e4bda',
-          ),
-  );
-
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp();
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -32,12 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 0, 246, 21),
+        primaryColor: const Color.fromARGB(150, 0, 255, 255),
       ),
       home: const Destpek(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
