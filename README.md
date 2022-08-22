@@ -1,6 +1,6 @@
 # cirokenkurdi
 
-A new Flutter project.
+Sepana Çîrokên Kurdî ye.
 
 ## Getting Started
 
