@@ -17,7 +17,6 @@ class Destpek extends StatefulWidget {
 class _DestpekState extends State<Destpek> {
   ControllerenGisti controllerenGisti = Get.put(ControllerenGisti());
   int indexx = 0;
-  String paszemin = "assets/sengeupenge.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +24,11 @@ class _DestpekState extends State<Destpek> {
       child: Scaffold(
         bottomNavigationBar: BottomBar(context),
         appBar: AppBar(
-          backgroundColor: Colors.red,
-          // leading: IconButton(
-          //   icon: const Icon(Icons.menu_open_sharp),
-          //   onPressed: () {
-          //     _scaffold.currentState?.openDrawer();
-          //   },
-          //   tooltip: "Menûyê Veke",
-          // ),
+          backgroundColor: Colors.red.shade900,
           title: const Text(
             "Destpêk",
-            style: TextStyle(fontWeight: FontWeight.w900),
+            style: TextStyle(
+                fontWeight: FontWeight.w900, color: Colors.yellowAccent),
           ),
           centerTitle: true,
           actions: [
@@ -48,6 +41,13 @@ class _DestpekState extends State<Destpek> {
               tooltip: "Parve Bike",
             ),
           ],
+          elevation: 20.0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20)),
+            //BorderRadius.only
+          ),
         ),
         body: SafeArea(
           child: Container(
@@ -55,9 +55,17 @@ class _DestpekState extends State<Destpek> {
               // image: DecorationImage(
               //     image: AssetImage(paszemin), alignment: Alignment.topCenter),
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.cyan, Colors.white],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white,
+                  Colors.white,
+                  Color.fromARGB(255, 255, 230, 0),
+                  Color.fromARGB(255, 255, 230, 0),
+                  Color.fromARGB(255, 255, 230, 0),
+                  Colors.white,
+                  Colors.white
+                ],
               ),
             ),
             child: InkWell(

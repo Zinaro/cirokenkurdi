@@ -13,7 +13,7 @@ class SengeuPengeCirok extends StatefulWidget {
 class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
-  bool isRepeat = false;
+
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   late Duration? maxDuration;
@@ -23,7 +23,6 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
     super.initState();
     audioPlayer.onPlayerComplete.listen((event) {
       isPlaying = false;
-      isRepeat = false;
     });
 
     audioPlayer.onPlayerStateChanged.listen(
@@ -31,7 +30,6 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
         setState(
           () {
             isPlaying = (state == PlayerState.playing);
-            isRepeat = (state == ReleaseMode.loop);
           },
         );
       },
@@ -67,12 +65,12 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
   Future<AudioPlayer?> setAudio() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("stran/deng/ZarokTV-Keleso.opus")
+          .ref("ciroks/deng/SengeuPenge.mp3")
           .getDownloadURL();
       // isRepeat
       //     ? audioPlayer.setReleaseMode(ReleaseMode.loop)
       //     : audioPlayer.setReleaseMode(ReleaseMode.stop);
-
+      audioPlayer.setReleaseMode(ReleaseMode.loop);
       final url = storageRef;
       await audioPlayer.setSourceUrl(url);
       maxDuration = await audioPlayer.getDuration();
@@ -246,23 +244,6 @@ class _SengeuPengeCirokState extends State<SengeuPengeCirok> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          CircleAvatar(
-                            radius: 35,
-                            child: IconButton(
-                              icon: Icon(
-                                  isRepeat ? Icons.repeat_one : Icons.repeat),
-                              iconSize: 50,
-                              onPressed: () async {
-                                if (isRepeat) {
-                                  await snapshot.data!
-                                      .setReleaseMode(ReleaseMode.loop);
-                                } else {
-                                  await snapshot.data!
-                                      .setReleaseMode(ReleaseMode.stop);
-                                }
-                              },
-                            ),
-                          ),
                           CircleAvatar(
                             radius: 35,
                             child: IconButton(

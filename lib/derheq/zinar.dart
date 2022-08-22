@@ -199,7 +199,10 @@ class _ZinarState extends State<Zinar> {
                               gradient: const LinearGradient(
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                colors: [Colors.pink, Colors.white],
+                                colors: [
+                                  Colors.white,
+                                  Color.fromARGB(255, 68, 67, 67)
+                                ],
                               ),
                               boxShadow: const [
                                 BoxShadow(
@@ -213,8 +216,7 @@ class _ZinarState extends State<Zinar> {
                             padding: const EdgeInsets.all(4),
                             child: InkWell(
                               onTap: () async {
-                                const urlinsta =
-                                    "https://instagram.com/zinarpy";
+                                const urlinsta = "https://github.com/Zinaro";
                                 if (await canLaunchUrlString(urlinsta)) {
                                   await launchUrlString(
                                     urlinsta,
@@ -227,7 +229,7 @@ class _ZinarState extends State<Zinar> {
                                 child: Row(
                                   children: const [
                                     Icon(
-                                      FontAwesomeIcons.instagram,
+                                      FontAwesomeIcons.github,
                                       color: Colors.blue,
                                       size: 24,
                                     ),
@@ -235,7 +237,7 @@ class _ZinarState extends State<Zinar> {
                                       child: Padding(
                                         padding: EdgeInsets.all(4),
                                         child: Text(
-                                          "@zinarpy",
+                                          "@Zinaro",
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 13,
@@ -273,7 +275,7 @@ class _ZinarState extends State<Zinar> {
                             child: InkWell(
                               onTap: () async {
                                 const urltwitter =
-                                    "https://twitter.com/zinarpy";
+                                    "https://twitter.com/Zinarcim";
                                 if (await canLaunchUrlString(urltwitter)) {
                                   await launchUrlString(
                                     urltwitter,
@@ -294,7 +296,7 @@ class _ZinarState extends State<Zinar> {
                                       child: Padding(
                                         padding: EdgeInsets.all(4),
                                         child: Text(
-                                          "@zinarpy",
+                                          "@Zinarcim",
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 13,

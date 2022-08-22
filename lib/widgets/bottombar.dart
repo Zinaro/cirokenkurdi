@@ -9,11 +9,21 @@ import 'package:get/get.dart';
 Widget BottomBar(BuildContext context) {
   ControllerenGisti controllerenme = Get.find<ControllerenGisti>();
   return Obx(() => ConvexAppBar(
-        backgroundColor: Colors.green,
-        style: TabStyle.flip,
+        color: Colors.greenAccent,
+        activeColor: Colors.greenAccent,
+        backgroundColor: Colors.green.shade700,
+        style: TabStyle.reactCircle,
+        elevation: 20.0,
+
         items: const [
-          TabItem(icon: Icons.music_note_rounded, title: 'Stran'),
-          TabItem(icon: Icons.home, title: 'Destpêk'),
+          TabItem(
+            icon: Icons.music_note_rounded,
+            title: 'Stran',
+          ),
+          TabItem(
+            icon: Icons.home,
+            title: 'Destpêk',
+          ),
           TabItem(icon: Icons.developer_mode, title: 'Derheq'),
         ],
         initialActiveIndex:
