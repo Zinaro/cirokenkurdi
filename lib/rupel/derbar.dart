@@ -8,11 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Derheq extends StatelessWidget {
-  const Derheq({Key? key}) : super(key: key);
+class Derbar extends StatefulWidget {
+  const Derbar({Key? key}) : super(key: key);
 
-  get ad => null;
+  @override
+  State<Derbar> createState() => _DerbarState();
+}
 
+class _DerbarState extends State<Derbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,7 @@ class Derheq extends StatelessWidget {
                 );
               }
             },
-            tooltip: "Parve Bike",
+            tooltip: "Ray Bidê",
           ),
           Container(
             margin: const EdgeInsets.only(right: 10),
@@ -48,7 +51,7 @@ class Derheq extends StatelessWidget {
               icon: const Icon(Icons.share),
               onPressed: () {
                 Share.share(
-                    "Merheba şekirê min. Tu jî sepana 'Çîrokên Kurdî' daxîne û çîrokan bi zimadê xwe guhdar bike.\n\nAndroid Lînk: https://play.google.com/store/apps/details?id=com.cirokenkurdi.cirokenkurdi\n\nIOS Link: Android bikar bîne.");
+                    "Merheba şekirê min. Tu jî sepana 'Çîrokên Kurdî' daxîne û çîrokan bi zimanê xwe guhdar bike.\n\nAndroid Lînk: https://play.google.com/store/apps/details?id=com.cirokenkurdi.cirokenkurdi\n\nIOS Link: Android bikar bîne.");
               },
               tooltip: "Parve Bike",
             ),
@@ -66,14 +69,10 @@ class Derheq extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: const NetworkImage(
-                'https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Farka.jpeg?alt=media&token=c72e89c2-b1be-4d26-a5f1-df86fe256dce'),
+            image: const AssetImage('assets/bg.jpeg'),
             colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.1), BlendMode.dstATop),
             fit: BoxFit.cover,
-            onError: (dynamic exception, StackTrace? stackTrace) {
-              const AssetImage("assets/error.png");
-            },
           ),
           gradient: const LinearGradient(
             begin: Alignment.topCenter,

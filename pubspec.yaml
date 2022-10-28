@@ -1,5 +1,5 @@
 name: cirokenkurdi
-description: Sepana Çîrokên Kurdî ye.
+description: Sepana Çîrokên Kurdî ye. Êdî Çîrokên Kurdî hûn dikarin guhdarî bikin û têkevin xew. Xew xweş zarokno. Em ji we hez dikin.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.1+2
+version: 1.0.8+9
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -33,7 +33,7 @@ dependencies:
   firebase_core: ^1.19.1
   cloud_firestore: ^3.2.1
   firebase_storage: ^10.3.1
-  url_launcher: ^6.1.4
+  url_launcher: ^6.1.5
   convex_bottom_bar: ^3.0.0
   get: ^4.6.5
   file_picker: ^4.6.1
@@ -43,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   flutter_native_splash: ^2.2.7
+  flutter_cube: ^0.1.1
   
   
 
@@ -78,11 +79,18 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/error.png
     - assets/firat.jpg
     - assets/gulistan.jpg
     - assets/gulistanufirat.jpg
     - assets/panda.png
     - assets/bg.jpeg
+    - assets/back.png
+    - assets/dinya/earth.obj
+    - assets/dinya/earth.mtl
+    - assets/dinya/surface_b.jpg
+    - assets/dinya/surface.jpg
+    - assets/dinya/ColumnsStudio_thumb.jpg
     
     
   

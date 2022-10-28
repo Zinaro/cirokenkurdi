@@ -14,7 +14,7 @@ class Temburxwaz extends StatefulWidget {
 class _TemburxwazState extends State<Temburxwaz> {
   bool weneheye = false;
   String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Ftemburxwaz.jpg?alt=media&token=1b6da4d6-48a9-4d62-9677-f57162e6b13b";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Ftemburxwaz.jpg?alt=media&token=9dd95ca0-b345-45dd-87df-0f4dcba52485";
   @override
   void initState() {
     super.initState();
@@ -26,7 +26,7 @@ class _TemburxwazState extends State<Temburxwaz> {
   Future<String?> linkUrl() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("derheq/wene/temburxwaz.jpg")
+          .ref("derbar/wene/temburxwaz.jpg")
           .getDownloadURL();
 
       setState(() {

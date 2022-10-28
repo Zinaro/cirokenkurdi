@@ -15,7 +15,7 @@ class Zinar extends StatefulWidget {
 class _ZinarState extends State<Zinar> {
   bool weneheye = false;
   String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fzinar.jpg?alt=media&token=ab34bea5-a910-4a34-bcb1-4e616f4352ec";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Fzinar.jpg?alt=media&token=161d910f-d544-49d3-b681-7434c00f82df";
   @override
   void initState() {
     super.initState();
@@ -27,7 +27,7 @@ class _ZinarState extends State<Zinar> {
   Future<String?> linkUrl() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("derheq/wene/zinar.jpg")
+          .ref("derbar/wene/zinar.jpg")
           .getDownloadURL();
 
       setState(() {

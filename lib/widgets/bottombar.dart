@@ -52,7 +52,7 @@ Widget BottomBar(BuildContext context) {
               controllerenme.kijanmenu.value = i,
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const Derheq()),
+                  MaterialPageRoute(builder: (context) => const Derbar()),
                   (route) => false)
             }
         },

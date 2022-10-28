@@ -13,7 +13,7 @@ class _AgahdariState extends State<Agahdari> {
       "   Em vê sepanê diyariyê hemû zarokên Kurda dikin. Dinya bi we xweş e. Em ji we hez dikin ronahiyên çavên me.";
 
   String agahdari2 =
-      "   Ji bo pêşniyariyên xwe ji kerema xwe re bi me re bikevin têkiliyê. Fikrên we li ser sepanên Kurdî hebin hûn dikarin bi me re parve bikin. Ji bo sponsoriyê jî hûn dikarin ji me re alîkar bibin.";
+      "   Wêneyê çîrokan bi hişê çêkirî (Midjourney) hatin amadekirin. Ji bo pêşniyarî û rexneyên xwe û ji bo sponsoriyê ji kerema xwe re bi me re bikevin têkiliyê. Spas ji bo hemû piştgirên me...";
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -74,7 +74,7 @@ class _AgahdariState extends State<Agahdari> {
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 left: 4, right: 4, bottom: 4),
-                            child: Text(
+                            child: SelectableText(
                               agahdari,
                               style: GoogleFonts.oswald(
                                   fontSize: 14, color: Colors.black87),
@@ -98,7 +98,7 @@ class _AgahdariState extends State<Agahdari> {
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 left: 4, right: 4, bottom: 4),
-                            child: Text(
+                            child: SelectableText(
                               agahdari2,
                               style: GoogleFonts.oswald(
                                   fontSize: 14, color: Colors.black87),

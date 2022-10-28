@@ -1,3 +1,4 @@
 {
-    "editor.experimental.stickyScroll.enabled": true
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "editor.stickyScroll.enabled": true
 }

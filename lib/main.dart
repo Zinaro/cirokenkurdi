@@ -9,11 +9,11 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(const Sepan());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Sepan extends StatelessWidget {
+  const Sepan({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

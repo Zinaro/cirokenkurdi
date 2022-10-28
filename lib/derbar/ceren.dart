@@ -14,7 +14,7 @@ class Ceren extends StatefulWidget {
 class _CerenState extends State<Ceren> {
   bool weneheye = false;
   String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fceren.jpg?alt=media&token=1f89c44c-fd09-4941-be92-f7d2f9762349";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Fceren.jpg?alt=media&token=7c5d2ee3-c732-48b2-a5cb-8e15f08c245c";
   @override
   void initState() {
     super.initState();
@@ -26,7 +26,7 @@ class _CerenState extends State<Ceren> {
   Future<String?> linkUrl() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("derheq/wene/ceren.jpg")
+          .ref("derbar/wene/ceren.jpg")
           .getDownloadURL();
 
       setState(() {
@@ -191,7 +191,7 @@ class _CerenState extends State<Ceren> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        width: 140,
+                        width: 150,
                         height: 33,
                         constraints:
                             const BoxConstraints(maxHeight: 33, maxWidth: 140),
@@ -214,7 +214,7 @@ class _CerenState extends State<Ceren> {
                           child: InkWell(
                             onTap: () async {
                               const urlinsta =
-                                  "https://instagram.com/cceren.nn";
+                                  "https://instagram.com/cerenyildirann";
                               if (await canLaunchUrlString(urlinsta)) {
                                 await launchUrlString(
                                   urlinsta,
@@ -235,7 +235,7 @@ class _CerenState extends State<Ceren> {
                                     child: Padding(
                                       padding: EdgeInsets.all(4),
                                       child: Text(
-                                        "@cceren.nn",
+                                        "@cerenyildirann",
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 13,

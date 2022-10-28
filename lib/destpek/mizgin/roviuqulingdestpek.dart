@@ -1,20 +1,22 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-class Ceribandin extends StatefulWidget {
-  const Ceribandin({Key? key}) : super(key: key);
+class RoviuQulingDestpek extends StatefulWidget {
+  const RoviuQulingDestpek({Key? key}) : super(key: key);
 
   @override
-  State<Ceribandin> createState() => _CeribandinState();
+  State<RoviuQulingDestpek> createState() => _RoviuQulingDestpekState();
 }
 
-class _CeribandinState extends State<Ceribandin> {
+class _RoviuQulingDestpekState extends State<RoviuQulingDestpek> {
+  String navCiroke = "Rovî û Quling";
+  String agahi = "Qala dekê rovî û qulingê dike.";
   bool weneheye = false;
   bool weneheye2 = false;
   String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=8327b606-d465-42c4-bb8c-153b7f795e92";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Fmizgin.jpg?alt=media&token=a8df6c0b-2b50-49c9-984b-b22b12270479";
   String urlwene2 =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/ciroks%2Fwene%2Frovi.jpg?alt=media&token=0af0c245-a390-4403-adc7-b9d8d18e61b1";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/ciroks%2Fwene%2F1%2Froviuquling1.jpg?alt=media&token=5791cd2d-71b4-46b9-b6c8-50e8d026a949";
   @override
   void initState() {
     super.initState();
@@ -27,11 +29,11 @@ class _CeribandinState extends State<Ceribandin> {
   Future<String?> linkUrl() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("derheq/wene/mizgin.jpg")
+          .ref("derbar/wene/mizgin.jpg")
           .getDownloadURL();
 
       final storageRef2 = await FirebaseStorage.instance
-          .ref("ciroks/wene/rovi.jpg")
+          .ref("ciroks/wene/1/roviuquling1.jpg")
           .getDownloadURL();
 
       setState(() {
@@ -57,7 +59,7 @@ class _CeribandinState extends State<Ceribandin> {
               offset: const Offset(0, 24), // changes position of shadow
             ),
           ],
-          color: const Color.fromARGB(150, 0, 255, 255),
+          color: const Color.fromARGB(255, 0, 112, 112),
           image: DecorationImage(
             image: NetworkImage(urlwene2),
             fit: BoxFit.fill,
@@ -71,14 +73,11 @@ class _CeribandinState extends State<Ceribandin> {
         width: double.maxFinite,
         child: Column(
           children: [
-            const SizedBox(height: 280, child: null),
+            const SizedBox(height: 207, child: null),
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(150, 0, 255, 255),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(5),
-                      bottomRight: Radius.circular(5)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -88,12 +87,12 @@ class _CeribandinState extends State<Ceribandin> {
                         color: Colors.transparent,
                         height: 80,
                         child: Column(
-                          children: const [
+                          children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                "Şengê û Pengê",
-                                style: TextStyle(
+                                navCiroke,
+                                style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -102,11 +101,11 @@ class _CeribandinState extends State<Ceribandin> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 5, left: 10, right: 5, bottom: 5),
                                 child: Text(
-                                  "Qala bizin û karikên wê dike",
-                                  style: TextStyle(
+                                  agahi,
+                                  style: const TextStyle(
                                     color: Colors.black54,
                                     fontSize: 14,
                                     fontWeight: FontWeight.normal,
@@ -203,6 +202,9 @@ class _CeribandinState extends State<Ceribandin> {
                   ],
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
           ],
         ),

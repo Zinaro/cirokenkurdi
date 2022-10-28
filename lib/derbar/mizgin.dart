@@ -14,7 +14,7 @@ class Mizgin extends StatefulWidget {
 class _MizginState extends State<Mizgin> {
   bool weneheye = false;
   String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/ciroken-kurdi.appspot.com/o/derheq%2Fwene%2Fmizgin.jpg?alt=media&token=8327b606-d465-42c4-bb8c-153b7f795e92";
+      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Fmizgin.jpg?alt=media&token=a8df6c0b-2b50-49c9-984b-b22b12270479";
   @override
   void initState() {
     super.initState();
@@ -26,7 +26,7 @@ class _MizginState extends State<Mizgin> {
   Future<String?> linkUrl() async {
     try {
       final storageRef = await FirebaseStorage.instance
-          .ref("derheq/wene/mizgin.jpg")
+          .ref("derbar/wene/mizgin.jpg")
           .getDownloadURL();
 
       setState(() {
