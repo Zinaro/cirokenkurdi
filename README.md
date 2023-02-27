@@ -2,9 +2,11 @@
 
 Sepana Çîrokên Kurdî ye.
 
+Play Store Link: <a href="https://play.google.com/store/apps/details?id=com.cirokenkurdi.cirokenkurdi">https://play.google.com/store/apps/details?id=com.cirokenkurdi.cirokenkurdi</a>
+
 ## Destpêk
 
-<img src="https://lh3.googleusercontent.com/u0GGcP5M8aUSfhg3nTZBF1mnJ5j78crTDuFlcp0rpxfLNmpho-zLBqAluIk4-Szy6bs" alt="Wêne" width="300" height="540">   <img src="https://lh3.googleusercontent.com/ygUYZ1RCtCttcW6lFVABWiggzlCwRvuCZlk38Ermu0hiSMpGRKAFEVBCu8rviXtUHZ0" alt="Wêne" width="300" height="540">
+<img src="https://play-lh.googleusercontent.com/hIEK1mzBt6yZXcjc8AbjetlopS368W_PcIsYWjmbIiKSaL1uebFs191ZRqkXsc7e0rQ=w2560-h1440" alt="Wêne" width="260" height="540">   <img src="https://play-lh.googleusercontent.com/3Q3pJAqt9NaHDFuOLDBqmCq8y7DC6rqsQEgi6YgOSEnO_565JK0Q48x5maSAioIjEx7-=w2560-h1440" alt="Wêne" width="260" height="540">   <img src="https://play-lh.googleusercontent.com/dc9JjtXqRDLEoSuZH_1fqoacS8KsdbXrH5F-1unMwgLQhXmnMBIlPmlF-yzZpnj1LQ=w2560-h1440" alt="Wêne" width="260" height="540">   <img src="https://play-lh.googleusercontent.com/NMEOra5x-y904M1ddcarVRKjoR0CbIkBvhfbjakm7DmUF1hrdMTKDuhhxh_HlPtDnMY=w2560-h1440" alt="Wêne" width="260" height="540">
 
 
 Di sepanê de çîrokên Kurdî tên guhdarkirin.

@@ -1,46 +1,39 @@
-import 'package:firebase_storage/firebase_storage.dart';
+// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_null_comparison, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Zinar extends StatefulWidget {
-  const Zinar({Key? key}) : super(key: key);
-
-  @override
-  State<Zinar> createState() => _ZinarState();
-}
-
-class _ZinarState extends State<Zinar> {
-  bool weneheye = false;
-  String urlwene =
-      "https://firebasestorage.googleapis.com/v0/b/cirok-kurdi.appspot.com/o/derbar%2Fwene%2Fzinar.jpg?alt=media&token=161d910f-d544-49d3-b681-7434c00f82df";
-  @override
-  void initState() {
-    super.initState();
-    linkUrl();
-    weneheye = true;
-  }
-
-  // ignore: body_might_complete_normally_nullable
-  Future<String?> linkUrl() async {
-    try {
-      final storageRef = await FirebaseStorage.instance
-          .ref("derbar/wene/zinar.jpg")
-          .getDownloadURL();
-
-      setState(() {
-        urlwene = storageRef;
-      });
-    } catch (e) {
-      rethrow;
-    }
-  }
+class Kes extends StatelessWidget {
+  String kesNav;
+  String kesBio;
+  String kesWene;
+  String kesTwitter;
+  String kesInstagram;
+  String kesMalper;
+  String kesYoutube;
+  String kesMail;
+  bool kesZayend;
+  String kesNavnas;
+ Kes({Key? key,
+   required this.kesNav,
+   required this.kesBio,
+   required this.kesWene,
+   required this.kesTwitter,
+   required this.kesInstagram,
+   required this.kesMalper,
+   required this.kesYoutube,
+   required this.kesMail,
+   required this.kesZayend,
+   required this.kesNavnas
+}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(top: 8,bottom: 8),
       width: double.infinity,
       child: Container(
         decoration: BoxDecoration(
@@ -54,7 +47,6 @@ class _ZinarState extends State<Zinar> {
                   offset: const Offset(0, 24))
             ]),
 
-        ///)),
         margin: const EdgeInsets.all(8),
         child: Column(
           children: [
@@ -74,9 +66,9 @@ class _ZinarState extends State<Zinar> {
                               color: Colors.black.withOpacity(0.5),
                               offset: const Offset(0, 6))
                         ]),
-                    child: const Center(
-                        child: Text("Pêşvebir",
-                            style: TextStyle(
+                    child:  Center(
+                        child: Text(kesNavnas,
+                            style: const TextStyle(
                               fontSize: 16,
                             ))),
                   ),
@@ -117,15 +109,11 @@ class _ZinarState extends State<Zinar> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: weneheye
-                                          ? Image.network(urlwene,
+                                      child:Image.network(kesWene,
                                               fit: BoxFit.cover, errorBuilder:
                                                   (context, error, stackTrace) {
-                                              return Image.asset(
-                                                  "assets/firat.jpg");
-                                            })
-                                          : Image.asset("assets/firat.jpg",
-                                              fit: BoxFit.cover),
+                                              return kesZayend ? Image.asset("assets/gulistan.jpg"): Image.asset("assets/firat.jpg");
+                                            }),
                                     ),
                                   ),
                                 ],
@@ -148,7 +136,7 @@ class _ZinarState extends State<Zinar> {
                               child: Padding(
                                 padding: const EdgeInsets.only(
                                     top: 4, left: 4, right: 100),
-                                child: Text('Îslam Zinar',
+                                child: Text(kesNav,
                                     style: GoogleFonts.rubikBubbles(
                                       color: Colors.black,
                                       fontSize: 18,
@@ -168,8 +156,8 @@ class _ZinarState extends State<Zinar> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(
                                       left: 4, right: 4, bottom: 4),
-                                  child: Text(
-                                    "   Pêşvebirê vê sepanê ye. Bi eslê xwe ji Amed'ê ye û li Amed'ê dijî. Temenê wî 27 e. Bi Python û Flutter dizane û bernameyan diafirîne. Evîndarê Lînûx û hişê çêkirî ye.",
+                                  child: SelectableText(
+                                    kesBio.replaceAll(r'\n', '\n'),
                                     style: GoogleFonts.oswald(
                                         fontSize: 14, color: Colors.black87),
                                   ),
@@ -189,14 +177,17 @@ class _ZinarState extends State<Zinar> {
               child: Column(
                 children: [
                   Row(
+                    textBaseline: TextBaseline.alphabetic,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+                      // ! Instagram
+                      if (kesInstagram.isNotEmpty)
                       Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        width: 140,
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 150,
                         height: 33,
                         constraints:
-                            const BoxConstraints(maxHeight: 33, maxWidth: 140),
+                            const BoxConstraints(maxHeight: 33,),
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               begin: Alignment.topLeft,
@@ -215,7 +206,7 @@ class _ZinarState extends State<Zinar> {
                           padding: const EdgeInsets.all(4),
                           child: InkWell(
                             onTap: () async {
-                              const urlinsta = "https://instagram.com/zinarcim";
+                              String urlinsta = "https://instagram.com/${kesInstagram}";
                               if (await canLaunchUrlString(urlinsta)) {
                                 await launchUrlString(
                                   urlinsta,
@@ -226,18 +217,18 @@ class _ZinarState extends State<Zinar> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5),
                               child: Row(
-                                children: const [
-                                  Icon(
+                                children: [
+                                  const Icon(
                                     FontAwesomeIcons.instagram,
                                     color: Colors.redAccent,
                                     size: 24,
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.all(4),
+                                      padding: const EdgeInsets.all(4),
                                       child: Text(
-                                        "@zinarcim",
-                                        style: TextStyle(
+                                        "@${kesInstagram}",
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 13,
                                             fontWeight: FontWeight.bold),
@@ -250,9 +241,11 @@ class _ZinarState extends State<Zinar> {
                           ),
                         ),
                       ),
+                      // ! Twitter
+                      if (kesTwitter.isNotEmpty)
                       Container(
-                        margin: const EdgeInsets.only(right: 10),
-                        width: 140,
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 150,
                         height: 33,
                         constraints: const BoxConstraints(maxHeight: 33),
                         decoration: BoxDecoration(
@@ -273,7 +266,7 @@ class _ZinarState extends State<Zinar> {
                           padding: const EdgeInsets.all(4),
                           child: InkWell(
                             onTap: () async {
-                              const urltwitter = "https://twitter.com/Zinarcim";
+                              String urltwitter = "https://twitter.com/${kesTwitter}";
                               if (await canLaunchUrlString(urltwitter)) {
                                 await launchUrlString(
                                   urltwitter,
@@ -284,18 +277,18 @@ class _ZinarState extends State<Zinar> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5),
                               child: Row(
-                                children: const [
-                                  Icon(
+                                children: [
+                                  const Icon(
                                     FontAwesomeIcons.twitter,
                                     color: Colors.blue,
                                     size: 24,
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.all(4),
+                                      padding: const EdgeInsets.all(4),
                                       child: Text(
-                                        "@zinarcim",
-                                        style: TextStyle(
+                                        "@${kesTwitter}",
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 13,
                                             fontWeight: FontWeight.bold),
@@ -308,19 +301,143 @@ class _ZinarState extends State<Zinar> {
                           ),
                         ),
                       ),
+                      // ! Youtube li hundir
+                      if ((kesInstagram.isEmpty || kesTwitter.isEmpty) && kesYoutube.isNotEmpty && (kesTwitter.isNotEmpty || kesInstagram.isNotEmpty))
+                      Container(
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 150,
+                        height: 33,
+                        constraints:
+                            const BoxConstraints(maxHeight: 33),
+                        decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.white, Colors.red],
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Colors.black,
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: InkWell(
+                            onTap: () async {
+                              String urlyoutube =
+                                  "https://www.youtube.com/c/${kesYoutube}";
+                              if (await canLaunchUrlString(urlyoutube)) {
+                                await launchUrlString(
+                                  urlyoutube,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    FontAwesomeIcons.youtube,
+                                    color: Colors.redAccent,
+                                    size: 24,
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: Text(
+                                        kesYoutube,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      
                     ],
                   ),
-                  const SizedBox(
-                    height: 12,
-                  ),
+                  // ! Youtube
+                      if (((kesInstagram.isNotEmpty && kesTwitter.isNotEmpty) || (kesInstagram.isEmpty && kesTwitter.isEmpty)) && kesYoutube.isNotEmpty)
+                      Container(
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 150,
+                        height: 33,
+                        constraints:
+                            const BoxConstraints(maxHeight: 33),
+                        decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.white, Colors.red],
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Colors.black,
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: InkWell(
+                            onTap: () async {
+                              String urlyoutube =
+                                  "https://www.youtube.com/c/${kesYoutube}";
+                              if (await canLaunchUrlString(urlyoutube)) {
+                                await launchUrlString(
+                                  urlyoutube,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    FontAwesomeIcons.youtube,
+                                    color: Colors.redAccent,
+                                    size: 24,
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: Text(
+                                        kesYoutube,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                  // ! Mail
+                  if (kesMail.isNotEmpty)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(right: 10),
-                        width: 200,
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 230,
                         height: 35,
-                        constraints: const BoxConstraints(maxHeight: 50),
+                        constraints: const BoxConstraints(maxHeight:35),
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               begin: Alignment.topLeft,
@@ -339,28 +456,28 @@ class _ZinarState extends State<Zinar> {
                           padding: const EdgeInsets.all(4),
                           child: InkWell(
                             onTap: () {
-                              Clipboard.setData(const ClipboardData(
-                                  text: "islamzinar@gmail.com"));
+                              Clipboard.setData(ClipboardData(
+                                  text: kesMail));
                               snackbarNisanBide(context);
                             },
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5),
                               child: Row(
-                                children: const [
-                                  Icon(
+                                children: [
+                                  const Icon(
                                     FontAwesomeIcons.envelope,
                                     color: Colors.blue,
                                     size: 24,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 8,
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.all(4),
+                                      padding: const EdgeInsets.all(4),
                                       child: Text(
-                                        "islamzinar@gmail.com",
-                                        style: TextStyle(
+                                        kesMail,
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 13,
                                             fontWeight: FontWeight.bold),
@@ -374,7 +491,73 @@ class _ZinarState extends State<Zinar> {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  // ! Malper
+                  if (kesMalper.isNotEmpty)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 8,bottom: 8),
+                        width: 230,
+                        height: 35,
+                        constraints: const BoxConstraints(maxHeight: 35),
+                        decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.white, Colors.blueGrey],
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Colors.black,
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: InkWell(
+                            onTap: () async {
+                              String urlwp =
+                                  "https://${kesMalper}";
+                              if (await canLaunchUrlString(urlwp)) {
+                                await launchUrlString(
+                                  urlwp,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    FontAwesomeIcons.wordpress,
+                                    color: Colors.blue,
+                                    size: 24,
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: Text(
+                                        kesMalper,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
