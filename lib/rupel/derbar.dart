@@ -169,6 +169,7 @@ class _DerbarState extends State<Derbar> {
                               const SizedBox(
                                 height: 20,
                               ),
+                              // alikari dive rabe.
                               const Alikari(),
                               const SizedBox(
                                 height: 20,
